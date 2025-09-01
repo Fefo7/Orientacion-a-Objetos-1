@@ -1,17 +1,24 @@
 package ar.edu.unlp.oo1.ejercicio1;
 
-/**
- * Completar esta clase de acuerdo a lo especificado
- */
+
 public class WallPost {
 
+	private String text; 
+	private boolean estaDestacado;
+	private int CantMegusta;
+	public WallPost() 
+	{
+		this.text = "Undefined post";
+		this.estaDestacado = false;
+		this.CantMegusta = 0;
+	}
 	/**
-	 * Retorna el texto descriptivo de la publicación
+	 *Retorna el texto descriptivo de la publicación
 	 * 
 	 * @return
 	 */
 	String getText() {
-		return null;
+		return this.text;
 	};
 
 	/**
@@ -19,7 +26,7 @@ public class WallPost {
 	 * @param text
 	 */
 	void setText(String text) {
-		
+		this.text= text; 
 	};
 
 	/**
@@ -28,20 +35,25 @@ public class WallPost {
 	 * @return
 	 */
 	int getLikes() {
-		return 0;
+		return this.CantMegusta;
 	};
 
 	/**
 	 * Incrementa la cantidad de likes en uno
 	 */
 	void like() {
-		
+		this.CantMegusta ++;
 	};
 
 	/**
 	 * Decrementa la cantidad de likes en uno. Si ya es 0, no hace nada
 	 */
 	void dislike() {
+		if(this.CantMegusta != 0) 
+		{
+			this.CantMegusta --;
+		}
+			
 		
 	};
 
@@ -51,14 +63,14 @@ public class WallPost {
 	 * @return
 	 */
 	boolean isFeatured() {
-		return false;
+		return this.estaDestacado;
 	};
 
 	/**
 	 * Cambia el post del estado destacado a no destacado y viceversa
 	 */
 	void toggleFeatured() {
-		
+		this.estaDestacado = !this.estaDestacado;
 	};
 
 	/*
