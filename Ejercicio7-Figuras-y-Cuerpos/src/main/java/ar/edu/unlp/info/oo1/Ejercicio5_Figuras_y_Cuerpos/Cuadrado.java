@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo1.Ejercicio5_Figuras_y_Cuerpos;
 
-public class Cuadrado extends Figura {
+public class Cuadrado implemnts Figura {
 	private double Lado;
 
 	
@@ -11,8 +11,6 @@ public class Cuadrado extends Figura {
 
 	public void setLado(double lado) {
 		Lado = lado;
-		super.setPerimetro(getPerimetro());
-		super.setArea(getArea());
 	}
 
 	@Override
