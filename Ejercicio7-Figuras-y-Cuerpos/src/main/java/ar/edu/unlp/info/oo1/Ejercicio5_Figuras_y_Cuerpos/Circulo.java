@@ -4,7 +4,7 @@ package ar.edu.unlp.info.oo1.Ejercicio5_Figuras_y_Cuerpos;
 public class Circulo extends Figura 
 {
 	private double radio;
-	private double diametro;
+	
 	
 	public Circulo() 
 	{
@@ -17,18 +17,15 @@ public class Circulo extends Figura
 
 	public void setRadio(double radio) {
 		this.radio = radio;
-		this.setDiametro(); 
 		//necesito tener el radio para asegurarme que se van hacer
-		super.setArea(this.getArea());
-		super.setPerimetro(this.getPerimetro());
 	}
 	public double getDiametro() 
 	{
-		return this.diametro;
+		return this.radio *2;
 	}
-	public void setDiametro() 
+	public void setDiametro( double diametro) 
 	{
-		this.diametro=this.radio *2;
+		this.radio= diametro/2;
 	}
 
 	@Override
@@ -38,7 +35,7 @@ public class Circulo extends Figura
 
 	@Override
 	public double getPerimetro() {
-		return Math.PI * this.diametro;
+		return Math.PI * this.getDiametro();
 	}
 		
 
