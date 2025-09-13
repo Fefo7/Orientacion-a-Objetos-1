@@ -1,8 +1,12 @@
 package io.github.unlp_oo.Ejercicio10;
 
-public class Empeado {
+public class Empleado {
  private String nombre;
  
+ public Empleado(String nombre) 
+ {
+	 this.nombre =nombre;
+ }
  
  public double MontoBasico() 
  {
