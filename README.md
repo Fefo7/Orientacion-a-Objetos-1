@@ -22,4 +22,46 @@
   <h3>Expresiones lambda (clausuras / closures)</h2>
   <p>Nos ayudan para poder parametrizar lo qeu otros objetos deben hacer o decirle a otros objetos que me avisen cuando pase algo (callbacks)</p>
 </div>
+<h3>operaciones basicas de Strems</h3>
 
+<pre>
+List<Inversion> inversiones = this.inversiones;
+
+// Recorrer elementos
+inversiones.stream()
+    .forEach(inv -> System.out.println(inv));
+
+// Filtrar elementos
+inversiones.stream()
+    .filter(inv -> inv.getMonto() > 1000)
+    .forEach(System.out::println);
+
+// Transformar elementos
+List<Double> montos = inversiones.stream()
+    .map(Inversion::getMonto)
+    .collect(Collectors.toList());
+
+// Sumar valores
+double total = inversiones.stream()
+    .mapToDouble(Inversion::getMonto)
+    .sum();
+
+// Contar elementos
+long cantidad = inversiones.stream()
+    .count();
+
+// Ordenar por monto
+List<Inversion> ordenadas = inversiones.stream()
+    .sorted(Comparator.comparing(Inversion::getMonto))
+    .collect(Collectors.toList());
+
+// Verificar si alguna cumple una condición
+boolean hayGrandes = inversiones.stream()
+    .anyMatch(inv -> inv.getMonto() > 10000);
+
+// Eliminar duplicados (requiere equals y hashCode)
+List<Inversion> sinDuplicados = inversiones.stream()
+    .distinct()
+    .collect(Collectors.toList());
+
+</pre>
